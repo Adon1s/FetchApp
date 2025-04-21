@@ -22,36 +22,25 @@
             android:padding="16dp"
             android:text="Last updated: Never"
             android:textAppearance="?attr/textAppearanceBody1" />
-
     </com.google.android.material.card.MaterialCardView>
 
-    <androidx.core.widget.NestedScrollView
+    <TextView
+        android:id="@+id/text_home"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/statusCard"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <androidx.compose.ui.platform.ComposeView
+        android:id="@+id/compose_container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/statusCard">
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginVertical="8dp"
-            app:cardElevation="4dp">
-
-            <TextView
-                android:id="@+id/text_home"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:textIsSelectable="true"
-                android:textSize="14sp"
-                android:fontFamily="monospace"
-                tools:text="JSON content will appear here" />
-
-        </com.google.android.material.card.MaterialCardView>
-
-    </androidx.core.widget.NestedScrollView>
+        app:layout_constraintTop_toBottomOf="@id/statusCard" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -62,5 +51,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
